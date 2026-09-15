@@ -296,6 +296,73 @@
   .strip .txt p{margin-top:12px;color:var(--muted);font-size:14px;max-width:460px;line-height:1.6}
   @media (max-width:980px){.strip{height:56vh}.strip .txt{left:20px;bottom:40px}.strip .txt h2{font-size:34px}}
 
+
+  /* ---------- The Build Room ---------- */
+  #build{padding:120px 0 140px;background:linear-gradient(180deg,#000,#0f0e12 50%,#000)}
+  .br-grid{display:grid;grid-template-columns:380px 1fr;gap:18px;margin-top:56px;align-items:start}
+  .br-form{border:1px solid var(--line);border-radius:20px;padding:26px;background:var(--panel);display:flex;flex-direction:column;gap:10px;position:sticky;top:90px}
+  .br-k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--muted);margin-top:6px}
+  .br-form textarea.field{min-height:130px}
+  .br-run{margin-top:10px;align-self:flex-start;background:var(--gold);border-color:var(--gold)}
+  .br-run:hover{background:#fff;border-color:#fff}
+  .br-run:disabled{opacity:.5;pointer-events:none}
+  .br-status{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--muted);margin-top:8px;min-height:18px}
+  .br-dot{width:7px;height:7px;border-radius:50%;background:var(--dim)}
+  .br-status.busy .br-dot{background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 1s ease-in-out infinite}
+  .br-status.done .br-dot{background:var(--green);box-shadow:0 0 10px var(--green)}
+  .br-status.err .br-dot{background:#ff6b6b}
+  .br-examples{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--dim)}
+  .br-examples button{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+  .br-examples button:hover{color:#fff;border-color:var(--line-2)}
+  .br-out{border:1px solid var(--line);border-radius:20px;background:#08080a;overflow:hidden;min-height:520px}
+  .br-canvas-wrap{position:relative;height:460px;background:radial-gradient(70% 80% at 50% 60%,#14131a,#08080a 70%)}
+  #brCanvas{width:100%;height:100%;display:block;cursor:grab}
+  #brCanvas:active{cursor:grabbing}
+  .br-canvas-hud{position:absolute;left:18px;right:18px;top:14px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--muted);pointer-events:none}
+  .br-canvas-hud #brBuildPhase{color:var(--gold)}
+  .br-drag{position:absolute;right:18px;bottom:12px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--dim);pointer-events:none}
+  .br-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;transition:opacity .5s}
+  .br-empty.off{opacity:0}
+  .br-empty-t{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.03em}
+  .br-empty-s{color:var(--muted);font-size:13px;margin-top:8px}
+  .br-result{padding:28px}
+  .br-verdict h3{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.03em;line-height:1.1;margin-top:10px}
+  .br-verdict p{color:var(--muted);font-size:14px;line-height:1.7;margin-top:12px;max-width:720px}
+  .br-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+  .br-nodes{list-style:none;margin-top:10px;display:grid;gap:8px}
+  .br-nodes li{display:grid;grid-template-columns:12px 1fr;gap:10px;align-items:start;font-size:13px;line-height:1.5;color:#d8d8de;cursor:pointer;padding:6px 8px;border-radius:8px;transition:background .2s}
+  .br-nodes li:hover,.br-nodes li.on{background:rgba(216,184,120,.08)}
+  .br-nodes li i{width:10px;height:10px;border-radius:3px;margin-top:5px;background:var(--gold);transform:rotate(45deg);opacity:.9}
+  .br-nodes li b{display:block;font-weight:500;color:#fff}
+  .br-nodes li span{color:var(--muted);font-size:12.5px}
+  .br-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .br-stack span{font-family:var(--mono);font-size:10px;padding:6px 10px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--line)}
+  .br-phases{list-style:none;margin-top:10px;display:grid;gap:6px;counter-reset:ph}
+  .br-phases li{font-size:12.5px;color:var(--muted);padding-left:30px;position:relative;line-height:1.5;counter-increment:ph}
+  .br-phases li::before{content:"0" counter(ph);position:absolute;left:0;top:2px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--gold)}
+  .br-phases li b{color:#fff;font-weight:500}
+  .br-analytics{margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+  .br-analytics p{color:#d8d8de;font-size:14px;line-height:1.75;margin-top:10px}
+  .br-offer{margin-top:26px;border:1px solid rgba(216,184,120,.45);border-radius:18px;padding:24px;display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center;position:relative;overflow:hidden;
+    background:linear-gradient(120deg,rgba(216,184,120,.12),rgba(216,184,120,.02) 60%,transparent)}
+  .br-offer::before{content:"";position:absolute;left:-60px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(216,184,120,.25),transparent 65%);pointer-events:none}
+  .br-price{font-family:var(--display);font-weight:700;font-size:64px;letter-spacing:-.05em;line-height:1;background:linear-gradient(180deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .br-price-s{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:var(--gold);margin-top:8px}
+  .br-offer-r p{font-size:13.5px;line-height:1.65;color:var(--muted)}
+  .br-offer-r p b{color:#fff;font-weight:500}
+  .br-offer-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .br-offer-cta .btn.solid{background:var(--gold);border-color:var(--gold)}
+  .br-offer-cta .btn.solid:hover{background:#fff;border-color:#fff}
+  .br-fine{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--dim);margin-top:12px}
+  @media (max-width:980px){
+    .br-grid{grid-template-columns:1fr;gap:14px;margin-top:36px}
+    .br-form{position:static;padding:20px}
+    .br-canvas-wrap{height:340px}
+    .br-result{padding:20px}.br-verdict h3{font-size:24px}
+    .br-cols{grid-template-columns:1fr;gap:20px}
+    .br-offer{grid-template-columns:1fr;gap:14px;padding:20px}.br-price{font-size:52px}
+  }
+
   /* ---------- Contact ---------- */
   #contact{padding:120px 0 140px;background:#000}
   #contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
@@ -549,12 +616,13 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#novrant">Novrant AI</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#build">Build room</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-r"><a href="#contact" class="btn solid">Make the call</a><button class="burger" id="burger" aria-label="Menu"><i></i><i></i></button></div>
 </nav>
 <div class="menu" id="menu">
-  <a href="#top">Home</a><a href="#read">The Read</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#roadmap">Roadmap</a><a href="#novrant">Novrant AI</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  <a href="#top">Home</a><a href="#read">The Read</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#roadmap">Roadmap</a><a href="#novrant">Novrant AI</a><a href="#projects">Projects</a><a href="#build">Build room</a><a href="#contact">Contact</a>
   <button class="btn solid" id="menuPlay">▶ Play The Tell</button>
 </div>
 
@@ -848,6 +916,89 @@
     </div>
   </div>
 </section>
+
+<!-- ============ THE BUILD ROOM ============ -->
+<section id="build">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="pill">// THE BUILD ROOM</span>
+      <h2 class="center">Tell me what you're building. I'll tell you how it ships.</h2>
+      <p class="lede center">A bug that won't die, a half-built app, a napkin idea. Put it in. I'll read it, draw the production-grade system in 3D, run the numbers on where it grows, and hand you the plan — in about twenty seconds.</p>
+    </div>
+
+    <div class="br-grid rv">
+      <div class="br-form">
+        <div class="br-k">// 01 &nbsp;PRODUCT NAME</div>
+        <input class="field" id="brName" placeholder="e.g. Ledgerly" maxlength="60" autocomplete="off">
+        <div class="br-k">// 02 &nbsp;WHAT IT DOES — OR WHAT'S BROKEN</div>
+        <textarea class="field" id="brDesc" placeholder="Two or three sentences. What it is, what it should do, what's failing today." maxlength="900"></textarea>
+        <div class="br-k">// 03 &nbsp;WHO IT'S FOR</div>
+        <input class="field" id="brWho" placeholder="e.g. independent gyms in the UK" maxlength="80" autocomplete="off">
+        <button class="btn solid mag br-run" id="brRun">▶ Run the read</button>
+        <div class="br-status" id="brStatus"><span class="br-dot"></span><span id="brStatusTxt">Waiting for a brief.</span></div>
+        <div class="br-examples">
+          <span>Try:</span>
+          <button type="button" data-ex="0">Gym booking app</button>
+          <button type="button" data-ex="1">Invoice chaser for freelancers</button>
+          <button type="button" data-ex="2">Fix a crashing checkout</button>
+        </div>
+      </div>
+
+      <div class="br-out" id="brOut">
+        <div class="br-canvas-wrap">
+          <canvas id="brCanvas"></canvas>
+          <div class="br-canvas-hud">
+            <span id="brMode">// SYSTEM BLUEPRINT</span>
+            <span id="brBuildPhase">IDLE</span>
+          </div>
+          <div class="br-empty" id="brEmpty">
+            <div class="br-empty-t">The board is empty.</div>
+            <div class="br-empty-s">Give me a name and two sentences. I'll draw the rest.</div>
+          </div>
+          <div class="br-drag">DRAG TO ORBIT · CLICK A NODE</div>
+        </div>
+        <div class="br-result" id="brResult" hidden>
+          <div class="br-verdict">
+            <span class="label" id="brSource">// THE READ</span>
+            <h3 id="brVerdict"></h3>
+            <p id="brSummary"></p>
+          </div>
+          <div class="br-cols">
+            <div>
+              <div class="br-k">// SYSTEM</div>
+              <ul class="br-nodes" id="brNodes"></ul>
+            </div>
+            <div>
+              <div class="br-k">// STACK</div>
+              <div class="br-stack" id="brStack"></div>
+              <div class="br-k" style="margin-top:18px">// HOW WE BUILD IT</div>
+              <ol class="br-phases" id="brPhases"></ol>
+            </div>
+          </div>
+          <div class="br-analytics">
+            <div class="br-k">// ANALYTICS &amp; GROWTH</div>
+            <p id="brAnalytics"></p>
+          </div>
+          <div class="br-offer">
+            <div class="br-offer-l">
+              <div class="br-price">$850</div>
+              <div class="br-price-s">FLAT. END TO END.</div>
+            </div>
+            <div class="br-offer-r">
+              <p><b>Research to registration.</b> I build the product you just read about — production-grade, deployed, monitored — and I set the company up around it: research, architecture, build, 3D/AR/VR product visuals, deployment, analytics, and the registration paperwork. You get a business, not a repo.</p>
+              <div class="br-offer-cta">
+                <a class="btn solid" id="brMail" href="mailto:shashank_b_s@outlook.com">Read more — email me →</a>
+                <a class="btn" href="tel:+447823706272">+44 7823 706272</a>
+              </div>
+              <div class="br-fine">I take a handful of builds at a time. If the read above made sense to you, we'll get on well.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ /BUILD ROOM ============ -->
 
 <!-- ============ STRIP ============ -->
 <section class="strip" id="strip">
@@ -1177,6 +1328,195 @@
   (function(){ const st=document.getElementById('strip'), im=document.getElementById('stripImg'); if(!st)return;
     window.addEventListener('scroll',()=>{ const r=st.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight)return; const p=(innerHeight-r.top)/(innerHeight+r.height); im.style.transform=`translateY(${(p-.5)*-16}%)`; },{passive:true}); })();
 
+
+  /* ---------- THE BUILD ROOM ---------- */
+  // Set this to your Railway proxy URL once deployed (see build-room-api/README.md). Empty = built-in quick read.
+  const BUILD_ROOM_API = '';
+
+  (function(){
+    const $=id=>document.getElementById(id);
+    const nameEl=$('brName'),descEl=$('brDesc'),whoEl=$('brWho'),runBtn=$('brRun'),status=$('brStatus'),statusTxt=$('brStatusTxt');
+    const cv=$('brCanvas'),ctx=cv.getContext('2d'),empty=$('brEmpty'),phaseEl=$('brBuildPhase'),modeEl=$('brMode');
+    const EX=[
+      ['FitSlot','A booking app for independent gyms. Members book classes, trainers set schedules, owners see attendance. Right now it\'s a shared Google Sheet and a WhatsApp group.','Independent gyms in the UK'],
+      ['Chaser','Freelancers upload invoices; it tracks due dates, sends polite-then-firm reminders automatically, and shows who actually pays on time.','Freelance designers and developers'],
+      ['My Shopify store','Checkout crashes on mobile when a discount code is applied. Cart is fine, payment page throws a 500 about 10% of the time. Losing sales every weekend.','Small e-commerce store, ~2k orders/month']
+    ];
+    document.querySelectorAll('.br-examples button').forEach(b=>b.addEventListener('click',()=>{const e=EX[+b.dataset.ex];nameEl.value=e[0];descEl.value=e[1];whoEl.value=e[2];}));
+
+    /* ===== 3D blueprint renderer (canvas 2D, own projection — no libraries) ===== */
+    const G={nodes:[],edges:[],t0:0,rot:0.6,tilt:innerWidth<600?0.8:0.55,drag:null,auto:true,sel:-1,pulses:[],dpr:1,W:0,H:0,built:false};
+    const LAYER={client:0,edge:1,api:2,service:3,data:4,analytics:5};
+    const COLORS={client:'#d8d8de',edge:'#9fb3c8',api:'#d8b878',service:'#c9a86a',data:'#8fb8ff',analytics:'#3ddc84'};
+    function size(){G.dpr=Math.min(2,devicePixelRatio||1);G.W=cv.clientWidth;G.H=cv.clientHeight;cv.width=G.W*G.dpr;cv.height=G.H*G.dpr;}
+    window.addEventListener('resize',size); size();
+    function layout(nodes){
+      const byL={}; nodes.forEach(n=>{(byL[n.layer]=byL[n.layer]||[]).push(n);});
+      const L=Object.keys(byL).map(Number).sort((a,b)=>a-b); const span=Math.max(1,L.length-1);
+      nodes.forEach(n=>{const g=byL[n.layer]; const i=g.indexOf(n); const k=L.indexOf(n.layer);
+        n.x=(k/span-0.5)*7.2; n.z=(g.length===1?0:(i/(g.length-1)-0.5)*5.2); n.y=(i%2?0.45:-0.45)*(g.length>2?1:0); n.s=0;});
+    }
+    function project(x,y,z){
+      const c=Math.cos(G.rot),s=Math.sin(G.rot); let X=x*c-z*s, Z=x*s+z*c;
+      const ct=Math.cos(G.tilt),st=Math.sin(G.tilt); let Y=y*ct-Z*st; Z=y*st+Z*ct;
+      const f=7.5/(7.5+Z); const sc=Math.min(G.W*0.6,G.H)*(G.W<600?0.17:0.13);
+      return {x:G.W/2+X*sc*f, y:G.H/2+Y*sc*f+G.H*0.04, f, d:Z};
+    }
+    function cube(p,r,col,alpha,glow){
+      const h=r*0.9, w=r*1.25;
+      ctx.globalAlpha=alpha;
+      if(glow){ctx.shadowColor=col;ctx.shadowBlur=22*G.dpr;}
+      // top
+      ctx.fillStyle=col; ctx.beginPath(); ctx.moveTo(p.x,p.y-h); ctx.lineTo(p.x+w,p.y-h*0.5); ctx.lineTo(p.x,p.y); ctx.lineTo(p.x-w,p.y-h*0.5); ctx.closePath(); ctx.fill();
+      ctx.shadowBlur=0;
+      // left / right faces
+      ctx.fillStyle='rgba(0,0,0,.45)'; ctx.beginPath(); ctx.moveTo(p.x-w,p.y-h*0.5); ctx.lineTo(p.x,p.y); ctx.lineTo(p.x,p.y+h*0.9); ctx.lineTo(p.x-w,p.y+h*0.4); ctx.closePath(); ctx.fill();
+      ctx.fillStyle='rgba(0,0,0,.65)'; ctx.beginPath(); ctx.moveTo(p.x+w,p.y-h*0.5); ctx.lineTo(p.x,p.y); ctx.lineTo(p.x,p.y+h*0.9); ctx.lineTo(p.x+w,p.y+h*0.4); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,.35)'; ctx.lineWidth=1*G.dpr; ctx.beginPath(); ctx.moveTo(p.x,p.y-h); ctx.lineTo(p.x+w,p.y-h*0.5); ctx.lineTo(p.x+w,p.y+h*0.4); ctx.lineTo(p.x,p.y+h*0.9); ctx.lineTo(p.x-w,p.y+h*0.4); ctx.lineTo(p.x-w,p.y-h*0.5); ctx.closePath(); ctx.stroke();
+      ctx.globalAlpha=1;
+    }
+    function grid(){
+      ctx.strokeStyle='rgba(255,255,255,.06)'; ctx.lineWidth=1*G.dpr;
+      for(let i=-5;i<=5;i++){const a=project(i,1.1,-5),b=project(i,1.1,5),c=project(-5,1.1,i),d=project(5,1.1,i);
+        ctx.beginPath();ctx.moveTo(a.x*G.dpr,a.y*G.dpr);ctx.lineTo(b.x*G.dpr,b.y*G.dpr);ctx.stroke();ctx.beginPath();ctx.moveTo(c.x*G.dpr,c.y*G.dpr);ctx.lineTo(d.x*G.dpr,d.y*G.dpr);ctx.stroke();}
+    }
+    function draw(now){
+      requestAnimationFrame(draw);
+      const r=cv.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
+      if(G.auto&&!G.drag) G.rot+=0.0018;
+      ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,cv.width,cv.height);
+      grid();
+      if(!G.nodes.length) return;
+      const t=now-G.t0;
+      // build animation: nodes appear in layer order, then edges, then pulses
+      G.nodes.forEach((n,i)=>{const at=i*380; n.s=Math.min(1,Math.max(0,(t-at)/500)); n.s=1-Math.pow(1-n.s,3);});
+      const P=G.nodes.map(n=>project(n.x,n.y-(1-n.s)*1.2,n.z));
+      // edges (drawn first, only when both ends exist)
+      G.edges.forEach(([a,b],k)=>{const na=G.nodes[a],nb=G.nodes[b]; if(!na||!nb||na.s<1||nb.s<1) return;
+        const pa=P[a],pb=P[b]; const on=G.sel<0||G.sel===a||G.sel===b;
+        ctx.strokeStyle=on?'rgba(216,184,120,.55)':'rgba(255,255,255,.08)'; ctx.lineWidth=(on?1.4:1)*G.dpr; ctx.setLineDash([6*G.dpr,5*G.dpr]); ctx.lineDashOffset=-t/40;
+        ctx.beginPath(); ctx.moveTo(pa.x*G.dpr,pa.y*G.dpr); ctx.lineTo(pb.x*G.dpr,pb.y*G.dpr); ctx.stroke(); ctx.setLineDash([]);
+        // travelling pulse
+        const q=((t/1400)+k*0.37)%1; const px=pa.x+(pb.x-pa.x)*q, py=pa.y+(pb.y-pa.y)*q;
+        ctx.fillStyle=on?'#fff':'rgba(255,255,255,.25)'; ctx.beginPath(); ctx.arc(px*G.dpr,py*G.dpr,2.2*G.dpr,0,7); ctx.fill();
+      });
+      // nodes back-to-front
+      const order=G.nodes.map((n,i)=>i).sort((a,b)=>P[b].d-P[a].d);
+      ctx.font=`${11*G.dpr}px ${getComputedStyle(document.body).getPropertyValue('--mono')}`; ctx.textAlign='center';
+      order.forEach(i=>{const n=G.nodes[i],p=P[i]; if(n.s<=0) return; const sel=G.sel===i, dim=G.sel>=0&&!sel&&!G.edges.some(([a,b])=>(a===G.sel&&b===i)||(b===G.sel&&a===i));
+        const q={x:p.x*G.dpr,y:p.y*G.dpr}; const rad=(17+(sel?4:0))*G.dpr*p.f*n.s;
+        cube(q,rad,COLORS[n.type]||'#fff',dim?.25:1,sel||n.s<1);
+        ctx.globalAlpha=dim?.3:.9; ctx.fillStyle='#fff'; ctx.fillText(n.name.toUpperCase(),q.x,q.y+rad*1.1+16*G.dpr); ctx.globalAlpha=1;
+      });
+      const done=G.nodes.every(n=>n.s>=1); phaseEl.textContent=done?'LIVE · '+G.nodes.length+' NODES':'BUILDING… '+G.nodes.filter(n=>n.s>=1).length+'/'+G.nodes.length;
+    }
+    requestAnimationFrame(draw);
+    // orbit drag + click
+    cv.addEventListener('pointerdown',e=>{G.drag={x:e.clientX,rot:G.rot,y:e.clientY,tilt:G.tilt,moved:false};cv.setPointerCapture(e.pointerId);});
+    cv.addEventListener('pointermove',e=>{if(!G.drag)return;const dx=e.clientX-G.drag.x,dy=e.clientY-G.drag.y;if(Math.abs(dx)+Math.abs(dy)>3)G.drag.moved=true;G.rot=G.drag.rot+dx*0.008;G.tilt=Math.max(0.15,Math.min(1.2,G.drag.tilt+dy*0.005));});
+    cv.addEventListener('pointerup',e=>{ if(G.drag&&!G.drag.moved){ // pick nearest node
+        const r=cv.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top; let best=-1,bd=30;
+        G.nodes.forEach((n,i)=>{const p=project(n.x,n.y,n.z);const d=Math.hypot(p.x-mx,p.y-my);if(d<bd){bd=d;best=i;}});
+        select(best===G.sel?-1:best); }
+      G.drag=null; });
+    function select(i){G.sel=i;document.querySelectorAll('.br-nodes li').forEach((li,k)=>li.classList.toggle('on',k===i));}
+
+    /* ===== Quick-read engine (offline fallback; runs without any API) ===== */
+    const KW=[
+      [/\b(auth|login|sign ?up|account|member|user)s?\b/i,{id:'auth',name:'Auth & identity',type:'service',desc:'Sessions, roles, password reset, magic links. Boring, and where most apps leak.'}],
+      [/\b(pay|payment|checkout|billing|subscription|stripe|invoice|price)/i,{id:'pay',name:'Payments & billing',type:'service',desc:'Stripe with webhooks, idempotent retries, and an audit trail per transaction.'}],
+      [/\b(upload|video|image|photo|media|file|pdf)s?\b/i,{id:'media',name:'Media pipeline',type:'service',desc:'Object storage, background processing, signed URLs. Never through the API server.'}],
+      [/\b(chat|message|notif|email|sms|whatsapp|remind)/i,{id:'notify',name:'Notifications',type:'service',desc:'Email/SMS/push with templates, quiet hours, and delivery receipts.'}],
+      [/\b(ai|llm|gpt|agent|ml|recommend|predict|automat)/i,{id:'ai',name:'AI service',type:'service',desc:'LLM calls behind a queue with caching, cost caps, and a fallback path.'}],
+      [/\bsearch\b/i,{id:'search',name:'Search index',type:'data',desc:'Full-text search kept in sync by events, not cron.'}],
+      [/\b(map|location|gps|deliver|route|geo)/i,{id:'geo',name:'Geo service',type:'service',desc:'Geocoding, distance, and routing with cached tiles.'}],
+      [/\b(book|schedul|calendar|slot|appointment|class)/i,{id:'sched',name:'Scheduling engine',type:'service',desc:'Availability rules, conflicts, time zones, waitlists. The part everyone underestimates.'}],
+      [/\b(scrape|crawl|import|sync|integrat|api key|webhook)/i,{id:'ingest',name:'Ingestion & sync',type:'service',desc:'Rate-limited connectors with retries and dead-letter queues.'}],
+      [/\b(report|dashboard|analytics|metric|insight|track)/i,{id:'reports',name:'Reporting',type:'analytics',desc:'Materialised views for the numbers owners actually check.'}],
+      [/\b(shop|store|cart|order|product|inventory|ecommerce|shopify)/i,{id:'orders',name:'Orders & inventory',type:'service',desc:'Order state machine, stock reservations, and refund flows.'}],
+      [/\b(crash|500|error|bug|slow|fail|down|broken|timeout)/i,{id:'obs',name:'Observability',type:'analytics',desc:'Structured logs, tracing, and alerts — so the next 500 shows its face.'}],
+    ];
+    function quickRead(name,desc,who){
+      const text=desc+' '+who; const picks=[]; KW.forEach(([re,n])=>{if(re.test(text)&&!picks.some(p=>p.id===n.id))picks.push(n);});
+      const fix=/\b(crash|500|error|bug|slow|fail|down|broken|timeout|fix)/i.test(desc);
+      const base=[
+        {id:'client',name:'Web & mobile app',type:'client',desc:'One responsive front end; installable on phones. No app-store tax until it earns it.'},
+        {id:'edge',name:'Edge (CDN + WAF)',type:'edge',desc:'Caching, TLS, bot filtering, and rate limits before anything touches your servers.'},
+        {id:'api',name:'API (FastAPI)',type:'api',desc:'Typed endpoints, versioned, with request validation and structured errors.'},
+        ...picks.filter(p=>p.type==='service').slice(0,4),
+        {id:'db',name:'Postgres',type:'data',desc:'Migrations, backups, point-in-time recovery. Your data outlives every framework.'},
+        {id:'queue',name:'Worker queue',type:'service',desc:'Anything slow or flaky runs here, with retries. The API stays fast.'},
+        ...picks.filter(p=>p.type==='data'),
+        {id:'analytics',name:'Product analytics',type:'analytics',desc:'Events for activation, retention, and revenue — wired in from day one.'},
+        ...picks.filter(p=>p.type==='analytics'&&p.id!=='analytics'),
+      ];
+      const seen=new Set(); const nodes=base.filter(n=>!seen.has(n.id)&&seen.add(n.id)).map(n=>({...n,layer:LAYER[n.type]}));
+      const idx=id=>nodes.findIndex(n=>n.id===id); const E=[];
+      const link=(a,b)=>{const i=idx(a),j=idx(b);if(i>=0&&j>=0)E.push([i,j]);};
+      link('client','edge');link('edge','api');nodes.filter(n=>n.type==='service').forEach(n=>{link('api',n.id);});
+      link('api','db');nodes.filter(n=>n.type==='service'&&n.id!=='queue').forEach(n=>link(n.id,'db'));link('queue','db');
+      nodes.filter(n=>n.type==='analytics').forEach(n=>{link('db',n.id);link('api',n.id);});link('search','db');
+      const stack=['Python','FastAPI','Postgres','Redis','Playwright'].concat(picks.some(p=>p.id==='pay')?['Stripe']:[]).concat(picks.some(p=>p.id==='ai')?['Claude API']:[]).concat(['Railway','GitHub Actions','Sentry']);
+      const hot=picks[0]?picks[0].name.toLowerCase():'the core workflow';
+      const verdict=fix?`${name} isn't broken. It's unobserved.`:`${name} is a ${picks.length>=2?'real product':'clean product'} wearing a prototype's clothes.`;
+      const summary=fix
+        ?`A ${hot} failure that only shows up under real traffic is almost always state, not code: a race, a retry that isn't idempotent, or an edge case nobody logged. First move is observability — trace every request end to end, reproduce the 10%, then fix the root cause once. Then we harden the path so it can't regress: rate limits at the edge, a queue for the slow parts, alerts that page before customers tweet.`
+        :`Strip it to what ${who||'your users'} actually pay for: ${hot}. Ship that on a boring, production-grade spine — edge, typed API, Postgres, a worker queue — with analytics wired in from the first user, not the thousandth. Everything in the blueprint is there because it earns its keep on day one; nothing is there because it looks impressive on a diagram.`;
+      const phases=[
+        ['Research','Two days. Competitors, pricing, the three jobs users are actually hiring this for. You get a one-page brief and a no-go option.'],
+        ['Design','The system above, the data model, and the screens that matter. In 3D so the whole team sees the same thing.'],
+        ['Build','Production-grade from the first commit: tests, migrations, CI, staging. Weekly demos, not weekly meetings.'],
+        ['Deploy & monitor','Live on your domain with backups, alerts, and a runbook. The 3 a.m. plan exists before 3 a.m. does.'],
+        ['Register & launch','Company registration, domain, email, payments, analytics, and a launch plan. You own everything.'],
+      ];
+      const analytics=fix
+        ?`The number that matters is checkout completion rate on mobile, split by discount-code use — right now you're bleeding roughly a tenth of your weekend revenue and can't see it. Once the failure is fixed and traced, the same instrumentation tells you where the next leak is: abandonment by step, payment-method failures, and time-to-first-order. Fix the 10%, then grow by turning the funnel you can finally see into a weekly habit — one metric, one experiment, every Monday.`
+        :`Instrument three numbers from day one: activation (first ${hot.replace(/ &.*/,'')} completed), weekly retention, and revenue per active ${who?who.replace(/s$/,''):'user'}. Most products like ${name} die because nobody looked at week-two retention until month six. Growth comes from the loop, not the launch: every user who completes the core job should create a reason for the next one to show up — a shared link, an invite, a public page. We wire that loop into the product, measure it weekly, and double down on the one channel that moves it.`;
+      return {source:'// THE READ · QUICK MODE',verdict,summary,nodes,edges:E,stack,phases,analytics};
+    }
+
+    /* ===== Live research via your proxy (Claude API held server-side) ===== */
+    async function liveRead(name,desc,who){
+      const r=await fetch(BUILD_ROOM_API.replace(/\/$/,'')+'/blueprint',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,description:desc,audience:who})});
+      if(!r.ok) throw new Error('proxy '+r.status);
+      const j=await r.json();
+      const nodes=(j.components||[]).map(c=>({id:c.id,name:c.name,type:c.type in LAYER?c.type:'service',desc:c.desc,layer:LAYER[c.type in LAYER?c.type:'service']}));
+      const idx=id=>nodes.findIndex(n=>n.id===id);
+      const edges=(j.links||[]).map(([a,b])=>[idx(a),idx(b)]).filter(([a,b])=>a>=0&&b>=0);
+      return {source:'// THE READ · LIVE RESEARCH',verdict:j.verdict,summary:j.summary,nodes,edges,stack:j.stack||[],phases:(j.phases||[]).map(p=>[p.name,p.desc]),analytics:j.analytics};
+    }
+
+    /* ===== Run ===== */
+    const STEPS=['Reading the brief.','Researching the market.','Drawing the system.','Running the numbers.'];
+    let running=false;
+    async function run(){
+      if(running) return;
+      const name=nameEl.value.trim(),desc=descEl.value.trim(),who=whoEl.value.trim();
+      if(name.length<2||desc.length<20){status.className='br-status err';statusTxt.textContent='Give me a name and at least two real sentences.';descEl.focus();return;}
+      running=true;runBtn.disabled=true;status.className='br-status busy';empty.classList.add('off');$('brResult').hidden=true;G.nodes=[];G.edges=[];G.sel=-1;
+      let si=0;statusTxt.textContent=STEPS[0];const tick=setInterval(()=>{si=Math.min(STEPS.length-1,si+1);statusTxt.textContent=STEPS[si];},1300);
+      let out;
+      try{ out = BUILD_ROOM_API ? await liveRead(name,desc,who) : await new Promise(res=>setTimeout(()=>res(quickRead(name,desc,who)),3600)); }
+      catch(e){ out=quickRead(name,desc,who); }
+      clearInterval(tick);
+      render(out,name);
+      status.className='br-status done';statusTxt.textContent='Read complete. Scroll the blueprint.';running=false;runBtn.disabled=false;
+    }
+    function render(o,name){
+      layout(o.nodes);G.nodes=o.nodes;G.edges=o.edges;G.t0=performance.now();modeEl.textContent='// '+name.toUpperCase()+' — SYSTEM BLUEPRINT';
+      $('brSource').textContent=o.source;$('brVerdict').textContent=o.verdict;$('brSummary').textContent=o.summary;
+      $('brNodes').innerHTML=o.nodes.map((n,i)=>`<li data-i="${i}"><i style="background:${COLORS[n.type]||'#fff'}"></i><div><b>${n.name}</b><span>${n.desc||''}</span></div></li>`).join('');
+      document.querySelectorAll('.br-nodes li').forEach(li=>li.addEventListener('click',()=>select(+li.dataset.i===G.sel?-1:+li.dataset.i)));
+      $('brStack').innerHTML=o.stack.map(s=>`<span>${s}</span>`).join('');
+      $('brPhases').innerHTML=o.phases.map(([a,b])=>`<li><b>${a}.</b> ${b}</li>`).join('');
+      $('brAnalytics').textContent=o.analytics;
+      $('brMail').href='mailto:shashank_b_s@outlook.com?subject='+encodeURIComponent('Build Room: '+name)+'&body='+encodeURIComponent('Hi Shashank,\n\nI ran '+name+' through the Build Room and want to talk about building it end to end.\n\nWhat it does: '+descEl.value.trim()+'\nWho it\'s for: '+whoEl.value.trim()+'\n\n');
+      $('brResult').hidden=false;
+    }
+    runBtn.addEventListener('click',run);
+    descEl.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='Enter')run();});
+  })();
+
   /* ---------- Nav hide on scroll ---------- */
   (function(){ let last=0; const nav=document.querySelector('.nav'); window.addEventListener('scroll',()=>{ const y=scrollY; nav.classList.toggle('hide', y>last && y>200); last=y; },{passive:true}); })();
 
@@ -1198,7 +1538,7 @@
     const SWAPS=[['three','four'],['eight','nine'],['solo','with a team'],['alone','with help'],['FastAPI','Flask'],['SQLite','Postgres'],['Python','Node'],['Playwright','Selenium'],['Railway','Heroku'],['React','Vue'],['Vercel','Netlify'],['audits','reviews'],['agents','scripts'],['regulator','manager'],['pharma','fintech'],['LinkedIn','Indeed'],['boards','sites'],['3 a.m.','9 a.m.'],['Postgres','MySQL'],['HTMX','Alpine'],['Starter','Basic'],['Elite','Premium'],['Pro','Plus'],['systems','servers'],['data','logs'],['hired','shortlisted'],['forty','fifty'],['sleeps','works'],['name','number'],['coffee','tea'],['audit trail','changelog'],['GxP','GMP'],['founder','engineer'],['companies','products'],['messages','emails'],['machine','robot'],['problem','puzzle'],['role','job'],['week','month'],['live','beta'],['solve','fix'],['read','scan'],['close','open'],['evidence','proof'],['rules','laws'],['Big Data','Data Science'],['HPC','GPU'],['DISCOVER','SEARCH'],['TAILOR','EDIT'],['OUTREACH','FOLLOW-UP'],['TRACK','LOG'],['SCORE','RANK']];
     const hud={phase:$('tellPhase'),round:$('tellRound'),streak:$('tellStreak'),score:$('tellScore'),lives:$('tellLives'),timer:$('tellTimer'),nochange:$('tellNoChange')};
     const rnd=a=>a[Math.floor(Math.random()*a.length)];
-    const vis=el=>{if(el.closest('.marquee,.hero,.tell-hud,.tell-modal'))return false;const r=el.getBoundingClientRect();return r.width>18&&r.height>10&&r.top>70&&r.bottom<innerHeight-80&&r.left>=0&&r.right<=innerWidth&&getComputedStyle(el).visibility!=='hidden'&&el.offsetParent!==null;};
+    const vis=el=>{if(el.closest('.marquee,.hero,.tell-hud,.tell-modal,#build,#tellBanner'))return false;const r=el.getBoundingClientRect();return r.width>18&&r.height>10&&r.top>70&&r.bottom<innerHeight-80&&r.left>=0&&r.right<=innerWidth&&getComputedStyle(el).visibility!=='hidden'&&el.offsetParent!==null;};
     const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
     function toast(t,sub){const el=$('tellToast');el.innerHTML=t+(sub?`<small>${sub}</small>`:'');el.classList.add('on');setTimeout(()=>el.classList.remove('on'),1100);}
     function mark(r,bad){const m=document.createElement('div');m.className='tell-mark'+(bad?' bad':'');m.style.cssText=`left:${r.left-8}px;top:${r.top-6}px;width:${r.width+16}px;height:${r.height+12}px`;document.body.appendChild(m);setTimeout(()=>m.remove(),1400);}
