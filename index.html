@@ -604,6 +604,130 @@
     .hero .role,.hero .tag{transition:none}
   }
 </style>
+<style id="ac-styles">
+#ai-cyber{--ac-crit:#ff6b76;--ac-high:#ffab5e;--ac-med:#d8b878;--ac-low:#3ddc84;
+  background:var(--bg);color:var(--text);border-top:1px solid var(--line);
+  padding:clamp(52px,8vw,104px) 0;position:relative}
+#ai-cyber .ac-wrap{max-width:1100px;margin:0 auto;padding-inline:clamp(20px,5vw,40px)}
+#ai-cyber .ac-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:100px;padding:6px 13px}
+#ai-cyber .ac-eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+#ai-cyber .ac-h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.04;font-size:clamp(30px,5.2vw,56px);margin:20px 0 0;max-width:17ch}
+#ai-cyber .ac-h2 b{color:var(--green);font-weight:600}
+#ai-cyber .ac-lede{color:var(--muted);font-size:clamp(15px,2vw,19px);line-height:1.6;max-width:64ch;margin:18px 0 0}
+#ai-cyber .ac-lede b{color:var(--text);font-weight:500}
+#ai-cyber .ac-khead{display:flex;align-items:baseline;gap:11px;margin:0 0 9px}
+#ai-cyber .ac-knum{font-family:var(--mono);font-size:12px;color:var(--green);font-weight:500}
+#ai-cyber .ac-ktitle{font-family:var(--display);font-weight:600;font-size:clamp(21px,3vw,30px);letter-spacing:-.01em}
+#ai-cyber .ac-ksub{color:var(--muted);max-width:70ch;margin:0 0 26px;font-size:15px}
+#ai-cyber .ac-block{margin-top:clamp(40px,6vw,72px)}
+#ai-cyber .ac-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+#ai-cyber .ac-stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+#ai-cyber .ac-stat .n{font-family:var(--display);font-size:clamp(28px,4.4vw,40px);font-weight:600;line-height:1;letter-spacing:-.02em}
+#ai-cyber .ac-stat .n.g{color:var(--green)} #ai-cyber .ac-stat .n.o{color:var(--gold)}
+#ai-cyber .ac-stat .l{color:var(--muted);font-size:13px;margin-top:9px;line-height:1.45}
+#ai-cyber .ac-stat .s{color:var(--dim);font-size:11px;margin-top:9px;font-family:var(--mono)}
+#ai-cyber .ac-noise{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+#ai-cyber .ac-noise .cap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:13px}
+#ai-cyber .ac-noise h4{font-family:var(--display);font-size:15px;font-weight:600;margin:0}
+#ai-cyber .ac-leg{display:flex;gap:15px;font-size:12px;color:var(--muted)}
+#ai-cyber .ac-leg i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:6px;vertical-align:middle}
+#ai-cyber .ac-dots{display:grid;grid-template-columns:repeat(25,1fr);gap:4px}
+#ai-cyber .ac-dots span{aspect-ratio:1;border-radius:2.5px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+#ai-cyber .ac-dots span.on{background:var(--green);border-color:var(--green);box-shadow:0 0 8px var(--green)}
+#ai-cyber .ac-aud{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+#ai-cyber .ac-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:9px}
+#ai-cyber .ac-card .ic{width:36px;height:36px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;color:var(--green)}
+#ai-cyber .ac-card h4{font-family:var(--display);font-size:16px;font-weight:600;margin:0}
+#ai-cyber .ac-card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.5}
+#ai-cyber .ac-pipe{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding-bottom:6px}
+#ai-cyber .ac-stage{flex:1 0 165px;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px;display:flex;flex-direction:column;gap:7px}
+#ai-cyber .ac-stage .tag{font-family:var(--mono);font-size:10.5px;color:var(--green);text-transform:uppercase;letter-spacing:.08em}
+#ai-cyber .ac-stage h4{font-family:var(--display);font-size:14.5px;font-weight:600;margin:0}
+#ai-cyber .ac-stage ul{list-style:none;margin:2px 0 0;padding:0;color:var(--muted);font-size:12px;line-height:1.55}
+#ai-cyber .ac-arrow{flex:0 0 24px;display:grid;place-items:center;color:var(--dim)}
+#ai-cyber .ac-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+#ai-cyber .ac-t{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:19px}
+#ai-cyber .ac-t h4{font-family:var(--display);font-size:15.5px;font-weight:600;margin:0 0 7px;display:flex;gap:8px;align-items:center}
+#ai-cyber .ac-t h4 i{width:7px;height:7px;border-radius:2px;background:var(--green)}
+#ai-cyber .ac-t p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+/* console */
+#ai-cyber .ac-console{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+#ai-cyber .ac-ctop{display:flex;flex-wrap:wrap;gap:13px;align-items:center;justify-content:space-between;padding:15px 18px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+#ai-cyber .ac-ctop .ttl{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:15px}
+#ai-cyber .ac-ctop .ttl i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+#ai-cyber .ac-synth{font-family:var(--mono);font-size:10.5px;color:var(--gold);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+#ai-cyber .ac-modes{display:inline-flex;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:3px}
+#ai-cyber .ac-modes button{border:0;background:transparent;color:var(--muted);font-family:var(--body);font-weight:600;font-size:12.5px;padding:8px 13px;border-radius:7px;cursor:pointer}
+#ai-cyber .ac-modes button.on{background:var(--green);color:#042313}
+#ai-cyber .ac-callout{margin:0;padding:13px 18px;background:rgba(61,220,132,.07);border-bottom:1px solid var(--line);font-size:13px;color:var(--text)}
+#ai-cyber .ac-callout b{color:var(--green)}
+#ai-cyber .ac-filter{display:flex;flex-wrap:wrap;gap:7px;padding:12px 18px;border-bottom:1px solid var(--line)}
+#ai-cyber .ac-fchip{font-family:var(--body);font-size:12px;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
+#ai-cyber .ac-fchip.on{color:#042313;background:var(--green);border-color:var(--green)}
+#ai-cyber .ac-cbody{display:grid;grid-template-columns:244px 1fr}
+#ai-cyber .ac-controls{border-right:1px solid var(--line);padding:17px}
+#ai-cyber .ac-controls h5{font-family:var(--mono);margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
+#ai-cyber .ac-controls .hint{color:var(--dim);font-size:11.5px;margin:0 0 13px}
+#ai-cyber .ac-sl{margin-bottom:13px}
+#ai-cyber .ac-sl .lab{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px}
+#ai-cyber .ac-sl .lab .v{font-family:var(--mono);color:var(--green);font-size:12px}
+#ai-cyber input[type=range]{width:100%;accent-color:var(--green);cursor:pointer;margin:0}
+#ai-cyber .ac-controls.off .ac-sl,#ai-cyber .ac-controls.off .ac-reset{opacity:.4;pointer-events:none;filter:grayscale(.4)}
+#ai-cyber .ac-reset{margin-top:2px;background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:8px;font-size:12px;cursor:pointer;width:100%;font-family:var(--body)}
+#ai-cyber .ac-reset:hover{color:var(--text);background:rgba(255,255,255,.04)}
+#ai-cyber .ac-add{margin-top:15px;border-top:1px dashed var(--line);padding-top:13px}
+#ai-cyber .ac-add .mini{margin-bottom:9px}
+#ai-cyber .ac-add .mini .lab{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:3px;color:var(--muted)}
+#ai-cyber .ac-add .mini .v{font-family:var(--mono);color:var(--green)}
+#ai-cyber .ac-tgls{display:flex;gap:8px;margin-bottom:10px}
+#ai-cyber .ac-tgl{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-size:11.5px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px;cursor:pointer;color:var(--muted);user-select:none}
+#ai-cyber .ac-tgl[aria-pressed=true]{color:var(--green);border-color:var(--green);background:rgba(61,220,132,.08)}
+#ai-cyber .ac-addbtn{width:100%;background:var(--green);color:#042313;border:0;border-radius:8px;padding:9px;font-family:var(--body);font-weight:600;font-size:12.5px;cursor:pointer}
+#ai-cyber .ac-tw{overflow-x:auto}
+#ai-cyber table.ac-tbl{width:100%;border-collapse:collapse;min-width:600px}
+#ai-cyber .ac-tbl thead th{text-align:left;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);font-weight:500;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+#ai-cyber .ac-tbl th.num,#ai-cyber .ac-tbl td.num{text-align:right;font-variant-numeric:tabular-nums}
+#ai-cyber .ac-tbl tbody tr.r{border-bottom:1px solid var(--line);cursor:pointer}
+#ai-cyber .ac-tbl tbody tr.r:hover{background:rgba(255,255,255,.03)}
+#ai-cyber .ac-tbl tbody tr.r.fix{background:rgba(61,220,132,.06)}
+#ai-cyber .ac-tbl tbody tr.r.added{animation:acflash 1.4s ease}
+@keyframes acflash{0%{background:rgba(61,220,132,.3)}100%{}}
+#ai-cyber .ac-tbl td{padding:11px 14px;font-size:13px;vertical-align:middle;color:var(--text)}
+#ai-cyber .ac-rank{font-family:var(--display);font-weight:600;color:var(--muted);width:28px}
+#ai-cyber tr.fix .ac-rank{color:var(--green)}
+#ai-cyber .ac-cve{font-family:var(--mono);font-size:12px}
+#ai-cyber .ac-asset{color:var(--muted);font-size:12px}
+#ai-cyber .ac-mv{font-family:var(--mono);font-size:11.5px;font-weight:600}
+#ai-cyber .ac-mv.up{color:var(--green)} #ai-cyber .ac-mv.dn{color:var(--muted)} #ai-cyber .ac-mv.fl{color:var(--dim)}
+#ai-cyber .ac-score{font-family:var(--display);font-weight:600;font-size:14.5px;font-variant-numeric:tabular-nums}
+#ai-cyber .ac-pill,#ai-cyber .ac-flag{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:100px;white-space:nowrap}
+#ai-cyber .sv-c{color:var(--ac-crit);background:rgba(255,107,118,.14)}
+#ai-cyber .sv-h{color:var(--ac-high);background:rgba(255,171,94,.15)}
+#ai-cyber .sv-m{color:var(--ac-med);background:rgba(216,184,120,.16)}
+#ai-cyber .sv-l{color:var(--ac-low);background:rgba(61,220,132,.14)}
+#ai-cyber .ac-kev{color:var(--ac-crit);background:rgba(255,107,118,.12);border:1px solid rgba(255,107,118,.35)}
+#ai-cyber .ac-exp{color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line)}
+#ai-cyber .ac-det td{padding:0;border-bottom:1px solid var(--line);background:var(--bg-2)}
+#ai-cyber .ac-det .inr{padding:18px;display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
+#ai-cyber .ac-det h6{font-family:var(--mono);margin:0 0 9px;font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--dim)}
+#ai-cyber .ac-why{font-size:13px;color:var(--text);margin:0;line-height:1.55}
+#ai-cyber .ac-why .q{color:var(--muted)}
+#ai-cyber .ac-contrib{display:flex;flex-direction:column;gap:7px;margin-top:3px}
+#ai-cyber .ac-crow{display:grid;grid-template-columns:118px 1fr 44px;gap:9px;align-items:center;font-size:11.5px;color:var(--muted)}
+#ai-cyber .ac-bar{height:7px;border-radius:4px;background:rgba(255,255,255,.06);overflow:hidden}
+#ai-cyber .ac-bar i{display:block;height:100%;background:var(--green);border-radius:4px;transition:width .4s ease}
+#ai-cyber .ac-cv{font-family:var(--mono);text-align:right}
+#ai-cyber .ac-audit{margin-top:13px;border-top:1px dashed var(--line);padding-top:11px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.7}
+#ai-cyber .ac-audit span{color:var(--text)}
+#ai-cyber .ac-foot{color:var(--dim);font-size:11.5px;margin-top:16px;line-height:1.55}
+@media(max-width:820px){
+  #ai-cyber .ac-stats,#ai-cyber .ac-aud,#ai-cyber .ac-trust{grid-template-columns:1fr}
+  #ai-cyber .ac-pipe{flex-direction:column}#ai-cyber .ac-stage{flex:none}#ai-cyber .ac-arrow{height:24px;transform:rotate(90deg)}
+  #ai-cyber .ac-cbody{grid-template-columns:1fr}#ai-cyber .ac-controls{border-right:0;border-bottom:1px solid var(--line)}
+  #ai-cyber .ac-det .inr{grid-template-columns:1fr}
+}
+@media(max-width:560px){#ai-cyber .ac-dots{grid-template-columns:repeat(20,1fr)}}
+</style>
 </head>
 <body>
 
@@ -616,13 +740,14 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#novrant">Novrant AI</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#ai-cyber">AI × Cyber</a></li>
     <li><a href="#build">Build room</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-r"><a href="#contact" class="btn solid">Make the call</a><button class="burger" id="burger" aria-label="Menu"><i></i><i></i></button></div>
 </nav>
 <div class="menu" id="menu">
-  <a href="#top">Home</a><a href="#read">The Read</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#roadmap">Roadmap</a><a href="#novrant">Novrant AI</a><a href="#projects">Projects</a><a href="#build">Build room</a><a href="#contact">Contact</a>
+  <a href="#top">Home</a><a href="#read">The Read</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#roadmap">Roadmap</a><a href="#novrant">Novrant AI</a><a href="#projects">Projects</a><a href="#ai-cyber">AI × Cyber</a><a href="#build">Build room</a><a href="#contact">Contact</a>
   <button class="btn solid" id="menuPlay">▶ Play The Tell</button>
 </div>
 
@@ -1011,6 +1136,168 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
+<section id="ai-cyber">
+  <div class="ac-wrap">
+    <span class="ac-eyebrow"><i></i>AI × Cybersecurity · Case study</span>
+    <h2 class="ac-h2">Fix the <b>5% of exposure</b> that actually matters. First.</h2>
+    <p class="ac-lede">Most security teams drown in vulnerabilities and triage by severity score alone. I build <b>AI and data analysis that reads the whole signal</b> — what is being exploited right now, what is reachable, and what sits on something that matters — so defenders spend time where risk is real. Regulated-systems discipline from AstraZeneca, applied to security.</p>
+
+    <div class="ac-block">
+      <div class="ac-khead"><span class="ac-knum">01</span><span class="ac-ktitle">The state of play</span></div>
+      <p class="ac-ksub">Known vulnerabilities grow faster than any team can patch. Ranking by raw severity treats a loud score like a real threat, so the dangerous few hide in the noise.</p>
+      <div class="ac-stats">
+        <div class="ac-stat"><div class="n o">40,000+</div><div class="l">New vulnerabilities catalogued in 2024 — more than a hundred a day, and 2025 ran higher.</div><div class="s">Public CVE / NVD counts</div></div>
+        <div class="ac-stat"><div class="n g">~5%</div><div class="l">Of all known vulnerabilities are ever exploited in the wild. The rest are noise you can schedule.</div><div class="s">Cyentia / FIRST EPSS research</div></div>
+        <div class="ac-stat"><div class="n">1 in 10</div><div class="l">Rough share a team can remediate each month. Order of operations is everything.</div><div class="s">Remediation-capacity studies</div></div>
+      </div>
+      <div class="ac-noise">
+        <div class="cap"><h4>100 vulnerabilities, to scale</h4>
+          <div class="ac-leg"><span><i style="background:var(--green)"></i>Actually exploited (~5)</span><span><i style="background:rgba(255,255,255,.05);border:1px solid var(--line)"></i>Noise you can queue (~95)</span></div>
+        </div>
+        <div class="ac-dots" id="acDots" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="ac-block">
+      <div class="ac-khead"><span class="ac-knum">02</span><span class="ac-ktitle">Why it matters to everyone</span></div>
+      <p class="ac-ksub">The same gap — too many alerts, too little context — plays out from a family's devices to national infrastructure.</p>
+      <div class="ac-aud">
+        <div class="ac-card"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h4>Everyday people</h4><p>Home routers, phones and smart devices ship with flaws most people never hear about. Clear, ranked guidance names the one update that closes the door, instead of a scary list they ignore.</p></div>
+        <div class="ac-card"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V7l8-4 8 4v14"/><path d="M9 21v-6h6v6"/></svg></div><h4>Businesses</h4><p>Small teams rarely have a security analyst. Pointing limited hours at the issues attackers are really using turns a thin budget into real protection, with a defensible record for auditors.</p></div>
+        <div class="ac-card"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 4v6c0 6-4 9-9 10-5-1-9-4-9-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h4>Defense &amp; infrastructure</h4><p>Power, water, hospitals and government run sprawling estates of old and new systems. Prioritising by live exploitation and reachability keeps scarce defenders on what an adversary reaches for first.</p></div>
+      </div>
+    </div>
+
+    <div class="ac-block">
+      <div class="ac-khead"><span class="ac-knum">03</span><span class="ac-ktitle">The approach: AI plus data analysis</span></div>
+      <p class="ac-ksub">Data analysis fuses the signals that say whether a flaw is dangerous in context; the model ranks what to fix, then shows its working so a human can trust or overrule it.</p>
+      <div class="ac-pipe">
+        <div class="ac-stage"><span class="tag">Inputs</span><h4>Signals in</h4><ul><li>CVE &amp; CVSS severity</li><li>EPSS exploit probability</li><li>CISA KEV (exploited now)</li><li>Exposure &amp; criticality</li></ul></div>
+        <div class="ac-arrow">→</div>
+        <div class="ac-stage"><span class="tag">Analysis</span><h4>Enrich &amp; join</h4><ul><li>Normalise signals</li><li>Map flaws to assets</li><li>De-duplicate &amp; de-noise</li><li>Flag known exploitation</li></ul></div>
+        <div class="ac-arrow">→</div>
+        <div class="ac-stage"><span class="tag">Model</span><h4>Score &amp; rank</h4><ul><li>Weighted risk model</li><li>Tunable to your estate</li><li>Learns from outcomes</li><li>One number, 0–100</li></ul></div>
+        <div class="ac-arrow">→</div>
+        <div class="ac-stage"><span class="tag">Output</span><h4>Explain &amp; log</h4><ul><li>Plain-language reason</li><li>Factor contributions</li><li>Full audit trail</li><li>Ranked fix-first queue</li></ul></div>
+      </div>
+    </div>
+
+    <div class="ac-block">
+      <div class="ac-khead"><span class="ac-knum">04</span><span class="ac-ktitle">See it work</span></div>
+      <p class="ac-ksub">A working prototype. Switch between raw severity and the full signal and watch findings move, filter the queue, tune the weights, or add your own finding. Open any row for its reasoning and audit trail. Data is synthetic.</p>
+      <div class="ac-console">
+        <div class="ac-ctop">
+          <div class="ttl"><i></i>Signal · vulnerability prioritiser <span class="ac-synth">SYNTHETIC DATA</span></div>
+          <div class="ac-modes"><button id="acMSig" class="on">Signal (AI + data)</button><button id="acMCvss">CVSS only</button></div>
+        </div>
+        <p class="ac-callout" id="acCallout"></p>
+        <div class="ac-filter" id="acFilters">
+          <button class="ac-fchip on" data-f="all">All findings</button>
+          <button class="ac-fchip" data-f="fix">Fix-first</button>
+          <button class="ac-fchip" data-f="kev">KEV</button>
+          <button class="ac-fchip" data-f="exp">Internet-exposed</button>
+        </div>
+        <div class="ac-cbody">
+          <div class="ac-controls" id="acControls">
+            <h5>Model weights</h5><p class="hint">How much each signal counts.</p>
+            <div class="ac-sl"><div class="lab"><b>Exploit likelihood</b><span class="v" id="acvE">40</span></div><input type="range" id="acwE" min="0" max="100" value="40"></div>
+            <div class="ac-sl"><div class="lab"><b>Internet exposure</b><span class="v" id="acvX">20</span></div><input type="range" id="acwX" min="0" max="100" value="20"></div>
+            <div class="ac-sl"><div class="lab"><b>Business impact</b><span class="v" id="acvI">25</span></div><input type="range" id="acwI" min="0" max="100" value="25"></div>
+            <div class="ac-sl"><div class="lab"><b>Base severity</b><span class="v" id="acvS">15</span></div><input type="range" id="acwS" min="0" max="100" value="15"></div>
+            <button class="ac-reset" id="acReset">Reset weights</button>
+            <div class="ac-add">
+              <h5>Add a finding</h5><p class="hint">Drop one in and watch it rank.</p>
+              <div class="mini"><div class="lab"><span>CVSS</span><span class="v" id="acAvC">8.0</span></div><input type="range" id="acAC" min="0" max="10" step="0.1" value="8"></div>
+              <div class="mini"><div class="lab"><span>EPSS</span><span class="v" id="acAvE">0.50</span></div><input type="range" id="acAE" min="0" max="1" step="0.01" value="0.5"></div>
+              <div class="mini"><div class="lab"><span>Business criticality</span><span class="v" id="acAvI">3</span></div><input type="range" id="acAI" min="1" max="5" step="1" value="3"></div>
+              <div class="ac-tgls"><div class="ac-tgl" id="acAKev" role="button" tabindex="0" aria-pressed="false">On KEV</div><div class="ac-tgl" id="acAExp" role="button" tabindex="0" aria-pressed="false">Exposed</div></div>
+              <button class="ac-addbtn" id="acAddBtn">+ Add to queue</button>
+            </div>
+          </div>
+          <div class="ac-tw">
+            <table class="ac-tbl"><thead><tr><th class="num">#</th><th>Finding</th><th>Severity</th><th class="num">Score</th><th id="acMvHead">Move</th><th>Status</th></tr></thead><tbody id="acRows"></tbody></table>
+          </div>
+        </div>
+      </div>
+      <p class="ac-foot">Tap any row for the plain-language reason, factor breakdown and audit record. The “Move” column shows how far each finding jumps versus the other ranking method. CVE identifiers are fictional; CVSS, EPSS and CISA KEV are real frameworks; state-of-play figures are public research, rounded.</p>
+    </div>
+
+    <div class="ac-block">
+      <div class="ac-khead"><span class="ac-knum">05</span><span class="ac-ktitle">Built to be trusted</span></div>
+      <p class="ac-ksub">A security recommendation nobody can question is a liability. My background is regulated pharmaceutical systems, where every automated decision has to be explainable, traceable and reproducible.</p>
+      <div class="ac-trust">
+        <div class="ac-t"><h4><i></i>Explainable by default</h4><p>Every ranking comes with the reason in plain words and the exact contribution of each signal. A human can see why, agree, or overrule it.</p></div>
+        <div class="ac-t"><h4><i></i>Audit trail on every call</h4><p>Inputs, model version and timestamp are recorded for each score, so a decision can be reconstructed months later. The discipline 21 CFR Part 11 demands.</p></div>
+        <div class="ac-t"><h4><i></i>Tunable, not a black box</h4><p>Weights map to your real estate and risk appetite. The model assists the analyst's judgement instead of replacing it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var root=document.getElementById('ai-cyber'); if(!root)return;
+  var $=function(id){return document.getElementById(id);};
+  var dd=$('acDots'); if(dd){var on={3:1,27:1,51:1,66:1,88:1};for(var i=0;i<100;i++){var s=document.createElement('span');if(on[i])s.className='on';dd.appendChild(s);}}
+
+  var DATA=[
+   {id:"SIG-2026-0412",asset:"Edge VPN gateway",cvss:9.8,epss:0.95,kev:true, exp:true, crit:5},
+   {id:"SIG-2026-0290",asset:"Internal records DB",cvss:9.9,epss:0.02,kev:false,exp:false,crit:5},
+   {id:"SIG-2026-0377",asset:"Public web app",   cvss:9.1,epss:0.88,kev:true, exp:true, crit:4},
+   {id:"SIG-2026-0501",asset:"Public API gateway",cvss:8.6,epss:0.72,kev:true, exp:true, crit:4},
+   {id:"SIG-2026-0349",asset:"Cloud storage (PII)",cvss:7.2,epss:0.40,kev:false,exp:true, crit:5},
+   {id:"SIG-2026-0455",asset:"Email server",     cvss:8.1,epss:0.60,kev:false,exp:true, crit:4},
+   {id:"SIG-2026-0462",asset:"CMS plugin",        cvss:8.8,epss:0.82,kev:true, exp:true, crit:2},
+   {id:"SIG-2026-0087",asset:"Legacy file server",cvss:9.3,epss:0.55,kev:false,exp:false,crit:3},
+   {id:"SIG-2026-0528",asset:"Container runtime", cvss:8.4,epss:0.12,kev:false,exp:false,crit:4},
+   {id:"SIG-2026-0118",asset:"Staff workstation", cvss:7.5,epss:0.30,kev:false,exp:false,crit:2},
+   {id:"SIG-2026-0199",asset:"IoT camera",        cvss:7.0,epss:0.20,kev:false,exp:true, crit:1},
+   {id:"SIG-2026-0233",asset:"Office printer",    cvss:6.4,epss:0.05,kev:false,exp:false,crit:1}
+  ];
+  var DEF={E:40,X:20,I:25,S:15}, W=Object.assign({},DEF), mode="sig", filter="all", openId=null, justAdded=null, seq=1;
+  function sc(c){return c>=9?"sv-c":c>=7?"sv-h":c>=4?"sv-m":"sv-l";}
+  function sn(c){return c>=9?"Critical":c>=7?"High":c>=4?"Medium":"Low";}
+  function fac(v){return{ex:v.kev?Math.max(v.epss,0.85):v.epss,xp:v.exp?1:0.3,im:v.crit/5,se:v.cvss/10};}
+  function sig(v){var f=fac(v),s=W.E+W.X+W.I+W.S;if(s===0)return 0;return Math.round((W.E*f.ex+W.X*f.xp+W.I*f.im+W.S*f.se)/s*100);}
+  function sIn(v,m){return m==="sig"?sig(v):Math.round(v.cvss*10);}
+  function scv(v){return sIn(v,mode);}
+  function fix(v,x){return mode==="sig"?x>=70:v.cvss>=9.0;}
+  function rmap(m){var l=DATA.map(function(v){return{id:v.id,s:sIn(v,m),c:v.cvss};});l.sort(function(a,b){return b.s-a.s||b.c-a.c;});var o={};l.forEach(function(x,i){o[x.id]=i+1;});return o;}
+  function contrib(v){var f=fac(v),s=W.E+W.X+W.I+W.S;if(s===0)s=1;var p=[["Exploit likelihood",W.E*f.ex/s*100],["Internet exposure",W.X*f.xp/s*100],["Business impact",W.I*f.im/s*100],["Base severity",W.S*f.se/s*100]];var mx=Math.max.apply(null,p.map(function(x){return x[1];}))||1;return p.map(function(x){return '<div class="ac-crow"><span>'+x[0]+'</span><span class="ac-bar"><i style="width:'+(x[1]/mx*100).toFixed(0)+'%"></i></span><span class="ac-cv">+'+x[1].toFixed(1)+'</span></div>';}).join("");}
+  function why(v,rk,ork){var r=[];if(v.kev)r.push("it is on the CISA KEV list (confirmed exploited in the wild)");if(v.epss>=0.7)r.push("EPSS "+v.epss.toFixed(2)+" signals high near-term exploitation");else if(v.epss<=0.1)r.push("EPSS "+v.epss.toFixed(2)+" signals little real-world exploitation");if(v.exp)r.push("it is internet-facing");else r.push("it sits on an internal system");if(v.crit>=4)r.push("on a business-critical asset");else if(v.crit<=1)r.push("on a low-value asset");var t="Ranked #"+rk+(mode==="sig"?" by Signal":" by CVSS")+" because "+r.join(", ")+".";if(Math.abs(ork-rk)>=3){t+=' <span class="q">By '+(mode==="sig"?"raw CVSS":"Signal")+' it would sit around #'+ork+' — the extra signals move it '+(rk<ork?"up":"down")+'.</span>';}return t;}
+  function render(){
+    var cur=rmap(mode), oth=rmap(mode==="sig"?"cvss":"sig");
+    var list=DATA.map(function(v){return{v:v,x:scv(v)};});list.sort(function(a,b){return b.x-a.x||b.v.cvss-a.v.cvss;});
+    var tb=$('acRows');tb.innerHTML="";var fc=0;
+    list.forEach(function(o){
+      var v=o.v,rk=cur[v.id],fx=fix(v,o.x);if(fx)fc++;
+      if(filter==="fix"&&!fx)return;if(filter==="kev"&&!v.kev)return;if(filter==="exp"&&!v.exp)return;
+      var d=oth[v.id]-rk,mv;if(d>0)mv='<span class="ac-mv up">▲ '+d+'</span>';else if(d<0)mv='<span class="ac-mv dn">▼ '+(-d)+'</span>';else mv='<span class="ac-mv fl">—</span>';
+      var tr=document.createElement('tr');tr.className="r"+(fx?" fix":"")+(v.id===justAdded?" added":"");
+      tr.innerHTML='<td class="num ac-rank">'+rk+'</td><td><div class="ac-cve">'+v.id+'</div><div class="ac-asset">'+v.asset+'</div></td><td><span class="ac-pill '+sc(v.cvss)+'">'+sn(v.cvss)+' '+v.cvss.toFixed(1)+'</span></td><td class="num"><span class="ac-score" style="color:'+(fx?'var(--green)':'var(--text)')+'">'+o.x+'</span></td><td>'+mv+'</td><td>'+(v.kev?'<span class="ac-flag ac-kev">KEV</span> ':'')+(v.exp?'<span class="ac-flag ac-exp">Exposed</span>':'<span class="ac-flag ac-exp">Internal</span>')+'</td>';
+      tr.addEventListener('click',function(){openId=(openId===v.id?null:v.id);render();});tb.appendChild(tr);
+      if(openId===v.id){var dr=document.createElement('tr');dr.className="ac-det";dr.innerHTML='<td colspan="6"><div class="inr"><div><h6>Why this ranking</h6><p class="ac-why">'+why(v,rk,oth[v.id])+'</p><div class="ac-audit">scored_by: <span>signal-prioritiser v0.3</span><br>mode: <span>'+(mode==="sig"?"AI + data (weighted)":"CVSS base only")+'</span><br>inputs: <span>cvss='+v.cvss+' · epss='+v.epss+' · kev='+v.kev+' · exposed='+v.exp+' · criticality='+v.crit+'/5</span><br>snapshot: <span>2026-11-18T09:20Z (synthetic)</span></div></div><div><h6>Signal contribution</h6><div class="ac-contrib">'+(mode==="sig"?contrib(v):'<p class="ac-why q">Switch to Signal mode for the weighted factor breakdown.</p>')+'</div></div></div></td>';tb.appendChild(dr);}
+    });
+    var co=$('acCallout');
+    if(mode==="sig"){co.innerHTML='<b>'+fc+' of '+DATA.length+'</b> findings need action now. The top of the queue is live-exploited and reachable — not just high-scoring.';}
+    else{var tp=DATA.slice().sort(function(a,b){return b.cvss-a.cvss;})[0];co.innerHTML='Ranking by severity alone puts <b>'+tp.asset+'</b> (CVSS '+tp.cvss+') first — even though it is internal and barely exploited. Switch to Signal to re-rank by real risk.';}
+    $('acMvHead').textContent=mode==="sig"?"vs CVSS":"vs Signal";justAdded=null;
+  }
+  function bs(id,k,vid){var e=$(id),l=$(vid);e.addEventListener('input',function(){W[k]=+e.value;l.textContent=e.value;render();});}
+  bs('acwE','E','acvE');bs('acwX','X','acvX');bs('acwI','I','acvI');bs('acwS','S','acvS');
+  $('acReset').addEventListener('click',function(){W=Object.assign({},DEF);[['acwE','E','acvE'],['acwX','X','acvX'],['acwI','I','acvI'],['acwS','S','acvS']].forEach(function(a){$(a[0]).value=DEF[a[1]];$(a[2]).textContent=DEF[a[1]];});render();});
+  function sm(m){mode=m;$('acMSig').classList.toggle('on',m==="sig");$('acMCvss').classList.toggle('on',m==="cvss");$('acControls').classList.toggle('off',m!=="sig");render();}
+  $('acMSig').addEventListener('click',function(){sm("sig");});$('acMCvss').addEventListener('click',function(){sm("cvss");});
+  root.querySelectorAll('.ac-fchip').forEach(function(c){c.addEventListener('click',function(){filter=c.getAttribute('data-f');root.querySelectorAll('.ac-fchip').forEach(function(x){x.classList.toggle('on',x===c);});render();});});
+  function mt(id,vid,f){var e=$(id),l=$(vid);e.addEventListener('input',function(){l.textContent=f(e.value);});}
+  mt('acAC','acAvC',function(v){return(+v).toFixed(1);});mt('acAE','acAvE',function(v){return(+v).toFixed(2);});mt('acAI','acAvI',function(v){return v;});
+  function tg(id){var e=$(id);function t(){e.setAttribute('aria-pressed',e.getAttribute('aria-pressed')==="true"?"false":"true");}e.addEventListener('click',t);e.addEventListener('keydown',function(ev){if(ev.key===" "||ev.key==="Enter"){ev.preventDefault();t();}});}
+  tg('acAKev');tg('acAExp');
+  $('acAddBtn').addEventListener('click',function(){var id="SIG-2026-"+String(900+seq).padStart(4,'0');seq++;var v={id:id,asset:"Your finding "+(seq-1),cvss:+$('acAC').value,epss:+$('acAE').value,kev:$('acAKev').getAttribute('aria-pressed')==="true",exp:$('acAExp').getAttribute('aria-pressed')==="true",crit:+$('acAI').value};DATA.push(v);justAdded=id;openId=id;if(mode!=="sig")sm("sig");else render();root.scrollIntoView({behavior:'smooth'});});
+  render();
+})();
+</script>
+
 <section id="contact">
   <div class="wrap">
     <div class="node rv">
